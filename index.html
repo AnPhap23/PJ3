@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>|Thứ Ba|</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: url("gify.gif") repeat center / cover;
+      transition: background-color 0.5s;
+    }
+  
+    .image-container {
+      position: relative;
+      cursor: pointer;
+    }
+  
+    img {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 5px;
+      /* Bo viền cho ảnh */
+      transition: border 0.3s;
+      /* Hiệu ứng chuyển đổi bo viền trong 0.3 giây */
+    }
+  
+    .image-container.open .img-border {
+      border: 4px solid #d0a01e;
+      /* Màu bo viền khi mở phong thư */
+    }
+  
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  
+    .image-container:hover .overlay {
+      opacity: 1;
+    }
+  
+    .open-button {
+      padding: 10px 20px;
+      background-color: #d0a01e;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+  
+    .letter {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 80%;
+      font-size: 15px;
+      /* Other styles... */
+      max-height: 80%;
+      /* Limit the maximum height of the letter content */
+      overflow-y: auto;
+      /* Add scroll bar when content overflows */
+    }
+  
+    .letter.active {
+      display: block;
+    }
+  </style>
+    
+</head>
+<body>
+
+  <div class="image-container">
+    <img src="Đặng Thái An.png" alt="Phong thư">
+    <div class="overlay">
+      <div class="overlay-content">
+        <button class="open-button" onclick="openLetter()">Open</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="letter" id="letterContent">
+    <h1>Gửi cậu,</h1>
+    <p>Vẫn là tớ đây, tớ mong mọi thứ đều ổn với cậu, và tớ cũng nghĩ đến việc đặt nhiều câu hỏi trong tin nhắn quá, có phần hơi ngộp... Nên tớ viết thư này gửi cậu.</p>
+    <p>Ngày hôm nay của cậu thế nào? Thời tiết ở Hải Phòng tớ thấy là cũng đang nắng lắm, nếu ra ngoài đi làm thì cậu có mệt lắm không? Tớ cũng mong là khi đọc được thư này, cậu cảm thấy bớt buồn vì tớ so với hôm qua hơn một chút.</p>
+    <p>Tớ đang nghĩ về một chuyện ngày xưa tớ với cậu từng nói với nhau. Thời điểm đấy, tớ nghĩ rằng dù chuyện xấu gì xảy ra, mọi thứ sẽ tốt hơn, nhưng cậu lại nghĩ ngược lại, dù chuyện có tốt đến mức nào, chuyện xấu cũng sẽ tới. Lúc đó tớ đã không vui khi tớ nói rằng cậu cứ suy nghĩ tiêu cực như thế. Rằng hai cách nghĩ là giống nhau, sao cậu phải chọn hướng tiêu cực?</p>
+    <p>Giờ nghĩ lại, tớ mới thấy hai cách nghĩ thật sự là như nhau, nên chẳng có cái nào tích cực hơn cái nào cả. Ngay cả khi cậu sợ rằng những điều xấu sẽ tới, thì cậu cũng đang trân trọng những điều tốt đang xảy ra với cậu, nhiều như cái cách bản thân tớ trân trọng những điều tốt sẽ tới.</p>
+    <p>Giờ nghĩ lại, cậu cũng yêu những khoảnh khắc vui vẻ nhiều như tớ yêu chúng, và không phải cậu không coi trọng những khoảnh khắc đó mà chỉ ngồi yên đợi những điều xấu tới, cậu cũng cố gắng nhiều, để giữ những điều tốt đẹp ở lại.</p>
+    <p>Dù mọi thứ có khó khăn hay không tốt, tớ cũng cố để làm mọi thứ đi lên, bời vì chính cậu cũng đang cố gắng nhiều.</p>
+    <p>Tớ có nhiều điều muốn gửi cậu thêm lắm, nhưng tớ nghĩ không nên để thư này dài quá.</p>
+    <p>Cậu đi lại để ý nhé, cẩn thận không va quệt vào cái gì đấy làm đau cậu. Tớ mong mọi điều tốt sẽ đến với cậu. Tớ mong âm nhạc trong thư này làm cậu thích, và cảm ơn cậu vì đã đọc đến cuối thư nhé.</p>
+    <p>Tớ yêu và nhớ cậu nhiều, Biển của tớ..</p>
+    <p>_An_</p>
+    <!-- Thêm các nội dung khác của phong thư -->
+  </div>
+
+  <audio id="audioPlayer" src="恋人へ.mp3" loop></audio>
+
+  <script>
+    function openLetter() {
+      var letter = document.getElementById("letterContent");
+      letter.classList.add("active");
+      var imageContainer = document.querySelector(".image-container");
+      imageContainer.classList.add("open");
+      imageContainer.style.display = "none";
+
+      // Phát âm thanh khi mở phong thư
+      var audioPlayer = document.getElementById("audioPlayer");
+      audioPlayer.play();
+    }
+
+    // Tự động phát âm thanh khi trang web được tải
+    window.onload = function () {
+      var audioPlayer = document.getElementById("audioPlayer");
+      audioPlayer.play();
+    };
+  </script>
+</body>
+</html>
